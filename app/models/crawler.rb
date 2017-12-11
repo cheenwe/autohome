@@ -4,17 +4,20 @@ class Crawler
   # page = Nokogiri::HTML(open(WEB_INDEX))
 
   HTML_FILE = "#{Rails.root}/autohome.html"
-
   PAGE = File.open(HTML_FILE) { |f| Nokogiri::HTML(f) }
 
+  # Crawler.new.start_run
   def start_run
     # sign = "A"
     PAGE.search("//div[@class='uibox']").each do |brand|
+
+      # brand.search("dl>dd>ul>li")
+
       brand.search("dl>dt").each do |d|
-        # p d.search(">div").name
-        p d.search(">div").size
-        p d.search(">div").children
-        p "name: #{d.search(">div").children.text}"
+        # p d.search(">div").children.last.attributes['href'].value
+        # p "name: #{d.search(">div").children.text}"
+
+
         # p d.search(">div").children.attributes
         # p sign
         # p star.text
