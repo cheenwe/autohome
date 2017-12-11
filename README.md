@@ -17,7 +17,7 @@ sub_barnd:string
 price:string
 remark:string
 
-car_photos
+photo
 
 car_id:integer
 name:string
@@ -27,11 +27,11 @@ color:string
 background:string
 price:string
 
-rails g scaffold name:string english_name:string abbr:string  logo:string remark:string
+rails g scaffold brand name:string english_name:string abbr:string  logo:string remark:string
 
-rails g scaffold brand_id:integer sub_barnd:string price:string remark:string
+rails g scaffold car brand_id:integer:index sub_barnd:string price:string remark:string
 
-rails g scaffold car_id:integer name:string image::string photo:string color:string background:string price:string  remark:string
+rails g scaffold photo car_id:integer:index name:string image:string photo:string color:string background:string price:string  remark:string
 
 #F6F6F6
 

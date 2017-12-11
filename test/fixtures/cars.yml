@@ -1,0 +1,26 @@
+# == Schema Information
+#
+# Table name: cars
+#
+#  id         :integer          not null, primary key
+#  brand_id   :integer
+#  sub_barnd  :string(255)
+#  price      :string(255)
+#  remark     :string(255)
+#  created_at :datetime         not null
+#  updated_at :datetime         not null
+#
+
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  brand_id: 1
+  sub_barnd: MyString
+  price: MyString
+  remark: MyString
+
+two:
+  brand_id: 1
+  sub_barnd: MyString
+  price: MyString
+  remark: MyString
