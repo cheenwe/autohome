@@ -1,0 +1,17 @@
+development: &defaults
+  adapter: mysql2
+  encoding: utf8
+  pool: 8
+  host: 192.168.100.2
+  # host: localhost
+  database: autohome_cars
+  username: root
+  password: root
+
+test:
+  <<: *defaults
+  database: autohome_cars
+
+production:
+  <<: *defaults
+  database: autohome_cars

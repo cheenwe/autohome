@@ -1,0 +1,18 @@
+---
+:verbose: false
+# :concurrency: 5 # 并发数
+:concurrency: 30
+:timeout: 3
+
+:pidfile: tmp/pids/sidekiq.pid
+:logfile: log/sidekiq.log
+:queues:
+  - [default, 1]
+  - [push, 1]
+  - [create, 3]
+
+# you can override concurrency based on environment
+production:
+  :concurrency: 10
+staging:
+  :concurrency: 2
