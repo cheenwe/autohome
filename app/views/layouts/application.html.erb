@@ -1,14 +1,21 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <title>Autohome</title>
+    <meta charset="utf-8">
+    <title><%= content_for(:title) || 'A Tao on Rails Project' %></title>
     <%= csrf_meta_tags %>
 
-    <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
+    <%= stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track': 'reload' %>
+    <%= content_for(:stylesheet) %>
+
     <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
+    <%= content_for(:javascript) %>
   </head>
 
   <body>
-    <%= yield %>
+    <%= tao_page layout: 'default' do %>
+      <%= yield %>
+    <% end %>
+  </body>
   </body>
 </html>
