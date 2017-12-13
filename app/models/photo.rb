@@ -16,4 +16,5 @@
 #
 
 class Photo < ApplicationRecord
+
 end

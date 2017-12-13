@@ -1,8 +1,8 @@
 ---
 :verbose: false
 # :concurrency: 5 # 并发数
-:concurrency: 30
-:timeout: 3
+:concurrency: 100
+:timeout: 600
 
 :pidfile: tmp/pids/sidekiq.pid
 :logfile: log/sidekiq.log

@@ -10,14 +10,14 @@ resque_url = if File.exists?(config_file)
 Sidekiq.configure_server do |config|
 	config.redis = {
 		url: resque_url,
-		namespace: 'resque:wei'
+		namespace: 'resque:car1'
 	}
 end
 
 Sidekiq.configure_client do |config|
 	config.redis = {
 		url: resque_url,
-		namespace: 'resque:wei'
+		namespace: 'resque:car1'
 	}
 end
 

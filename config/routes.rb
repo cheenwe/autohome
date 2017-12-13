@@ -1,4 +1,8 @@
 Rails.application.routes.draw do
+
+  require 'sidekiq/web'
+  mount Sidekiq::Web => '/admin/sidekiq'
+
   resources :photos
   resources :cars
   resources :brands

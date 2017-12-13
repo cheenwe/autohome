@@ -6,9 +6,9 @@
   <thead>
     <tr>
       <th>Name</th>
+      <th>Logo</th>
       <th>English name</th>
       <th>Abbr</th>
-      <th>Logo</th>
       <th>Remark</th>
       <th colspan="3"></th>
     </tr>
@@ -17,10 +17,11 @@
   <tbody>
     <% @brands.each do |brand| %>
       <tr>
+
         <td><%= brand.name %></td>
+        <td><img src="<%= brand.logo %>"></td>
         <td><%= brand.english_name %></td>
         <td><%= brand.abbr %></td>
-        <td><%= brand.logo %></td>
         <td><%= brand.remark %></td>
         <td><%= link_to 'Show', brand %></td>
         <td><%= link_to 'Edit', edit_brand_path(brand) %></td>
@@ -29,6 +30,8 @@
     <% end %>
   </tbody>
 </table>
+<%= will_paginate @brands %>
+
 
 <br>
 

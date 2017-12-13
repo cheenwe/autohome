@@ -4,7 +4,10 @@ class BrandsController < ApplicationController
   # GET /brands
   # GET /brands.json
   def index
-    @brands = Brand.all
+    # @brands = Brand.all
+
+    @q = Brand.search(params[:q])
+    @brands = @q.result().paginate(:page => params[:page], :per_page => 30)
   end
 
   # GET /brands/1

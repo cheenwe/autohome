@@ -4,7 +4,10 @@ class PhotosController < ApplicationController
   # GET /photos
   # GET /photos.json
   def index
-    @photos = Photo.all
+    # @photos = Photo.all
+
+    @q = Photo.search(params[:q])
+    @photos = @q.result().paginate(:page => params[:page], :per_page => 30)
   end
 
   # GET /photos/1

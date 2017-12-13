@@ -1,37 +1,29 @@
 # 汽车之家车型及图片数据爬取
 
 
-品牌
-brands
-name:string
-english_name:string
-abbr:string
-logo:string
-remark:string
+## 项目介绍
+爬取汽车之家全部车型和品牌及照片数据并存数据库
+====
 
-cars
+处理大致流程:
+1. 解析所有车型数据 源文件参见 `autohome.html`
+2. 下载车型html -> shell脚本处理 html -> 解析处理后的 html -> 存数据库 (由于无法在线解析车型详细信息)
+3. 使用 sidekiq 队列下载html 及 图片
 
-brand_id:integer
-sub_barnd:string
-price:string
-remark:string
+- 处理 html 页面脚本参见 bin/del.sh
 
-photo
+```
+#sidekiq 运行情况, 仅下载部分 页面
+193,063 已处理  729 已失败 100 执行中 74,426 已进入队列 1 重试 0 已计划 0 已停滞
+```
 
-car_id:integer
-name:string
-image::string
-photo:string
-color:string
-background:string
-price:string
+## 捐赠赞赏
+如该项目对您有帮助,欢迎打赏.
+![701937fccdf5cebb5bf64913eef1edad](https://user-images.githubusercontent.com/5643208/33922694-6173c4ea-e007-11e7-9e9f-65427cdfdd9a.png)
 
-rails g scaffold brand name:string english_name:string abbr:string  logo:string remark:string
+## 其他
 
-rails g scaffold car brand_id:integer:index sub_barnd:string price:string remark:string
+对数据有需求,请联系本人...
 
-rails g scaffold photo car_id:integer:index name:string image:string photo:string color:string background:string price:string  remark:string
+如有侵权,请联系本人删除...
 
-## work
-
->rails g sidekiq:worker download_file

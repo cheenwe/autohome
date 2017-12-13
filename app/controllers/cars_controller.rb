@@ -4,7 +4,10 @@ class CarsController < ApplicationController
   # GET /cars
   # GET /cars.json
   def index
-    @cars = Car.all
+    # @cars = Car.all
+
+    @q = Car.search(params[:q])
+    @cars = @q.result().paginate(:page => params[:page], :per_page => 30)
   end
 
   # GET /cars/1
