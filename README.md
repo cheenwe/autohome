@@ -19,7 +19,9 @@
 
 ## 捐赠赞赏
 如该项目对您有帮助,欢迎打赏.
-![701937fccdf5cebb5bf64913eef1edad](https://user-images.githubusercontent.com/5643208/33922694-6173c4ea-e007-11e7-9e9f-65427cdfdd9a.png)
+
+<img width="300" src="https://user-images.githubusercontent.com/5643208/33922694-6173c4ea-e007-11e7-9e9f-65427cdfdd9a.png" alt="欢迎打赏">
+
 
 ## 其他
 

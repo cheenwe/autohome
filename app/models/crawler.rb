@@ -173,6 +173,22 @@ class Crawler
     }
   end
 
+  # Crawler.download_file(url, directory, filename)
+  def self.download_file(url, directory, filename)
+    # commd = "wget -P #{directory} -O #{filename} #{url}"
+    # system(commd)
+
+
+    file = directory + filename
+
+    File.open(file, "wb") { |s|
+      res = RestClient.get(url)
+      s.write(res)
+      s.close()
+    } rescue ''
+  end
+
+
   def test_parse_photo
     url = Photo.last.remark
 

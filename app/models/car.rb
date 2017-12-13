@@ -14,6 +14,10 @@
 
 class Car < ApplicationRecord
   validates :name, uniqueness: { scope: :brand_id }
+
+  has_many :photos
+  belongs_to :brand
+
   def series_id
     self.remark.split('/')[3]
   end
